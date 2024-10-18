@@ -24,26 +24,25 @@ wifite: To automate the auditing process.
 Installation
 Install the necessary tools:
 
-bash
+
 
 sudo apt update
 sudo apt install aircrack-ng wifite
 Check if your WiFi adapter supports monitor mode:
 
-bash
+
 
 sudo iwconfig
 Enable monitor mode on your adapter:
 
-bash
+
 
 sudo airmon-ng start wlan0
-Usage
 
+Usage
 Using wifite
 Run wifite to start scanning for available WiFi networks:
 
-bash
 
 sudo wifite
 Select the network(s) you wish to audit from the list displayed by wifite.
@@ -55,31 +54,28 @@ If successful, Wifite will crack the password and display it on the screen.
 Manual WiFi Auditing
 Start by placing your WiFi adapter in monitor mode:
 
-bash
 
 sudo airmon-ng start wlan0
 Use airodump-ng to scan for networks:
 
-bash
 
 sudo airodump-ng wlan0mon
 Target a specific network:
 
-bash
 
 sudo airodump-ng --bssid [BSSID] -c [CHANNEL] -w [OUTPUT] wlan0mon
 Deauthenticate a client to capture the handshake:
 
-bash
 
 sudo aireplay-ng --deauth 10 -a [BSSID] wlan0mon
 
 Crack the captured handshake:
 
-bash
 
 sudo aircrack-ng [OUTPUT].cap -w [WORDLIST]
-Screenshots
+
+
+#Screenshots
 Here are a few screenshots of the setup and usage:
 
 Monitor mode enabled:
